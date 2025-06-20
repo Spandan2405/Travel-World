@@ -3,6 +3,9 @@
   height: 30vh;
   border-radius: 5px 5px 0 0;
 }
+.tour_card:hover {
+  scale: 1.05;
+}
 
 .card {
   border: none !important;
@@ -86,7 +89,7 @@ button a {
 }
 
 button a:hover {
-  color: #fff;
+  color: black;
 }
 @media screen and (max-width: 576px) {
   .tour_title {

@@ -1,9 +1,10 @@
 import React, { useRef } from "react";
 import "./Search-bar.css";
 import { Col, Form, FormGroup } from "reactstrap";
-import { BASE_URL } from "./../utils/config";
+import { BASE_URL } from "./utils/config";
 import { useNavigate } from "react-router-dom";
-import { notifyError } from "../utils/toast";
+import { notifyError } from "./utils/toast";
+import { motion } from "motion/react";
 
 const SearchBar = () => {
   const locationRef = useRef(null);
@@ -54,7 +55,7 @@ const SearchBar = () => {
           onSubmit={SearchHandler}
           className="d-flex align-items-center gap-4"
         >
-          <FormGroup className="d-flex gap-3 form_group form_group-fast">
+          <FormGroup className="d-flex gap-3 form_group form_group-fast align-items-center">
             <span>
               <i className="ri-map-pin-line"></i>
             </span>
@@ -65,11 +66,12 @@ const SearchBar = () => {
                 placeholder="Where are you going?"
                 ref={locationRef}
                 required
+                className="px-2 py-1"
               />
             </div>
           </FormGroup>
 
-          <FormGroup className="d-flex gap-3 form_group form_group-last">
+          <FormGroup className="d-flex gap-3 form_group form_group-last align-items-center">
             <span>
               <i className="ri-map-pin-time-line"></i>
             </span>
@@ -79,11 +81,12 @@ const SearchBar = () => {
                 type="number"
                 placeholder="Distance in Km"
                 ref={distanceRef}
+                className="px-2 py-1"
               />
             </div>
           </FormGroup>
 
-          <FormGroup className="d-flex gap-3 form_group form_group-fast">
+          <FormGroup className="d-flex gap-3 form_group form_group-fast align-items-center">
             <span>
               <i className="ri-group-line"></i>
             </span>
@@ -94,13 +97,19 @@ const SearchBar = () => {
                 placeholder="0"
                 ref={maxGroupSizeRef}
                 required
+                className="px-2 py-1"
               />
             </div>
           </FormGroup>
 
-          <span className="search_icon" onClick={SearchHandler}>
+          <motion.span
+            className="search_icon"
+            onClick={SearchHandler}
+            whileTap={{ scale: 0.8 }}
+            whileHover={{ scale: 1.2 }}
+          >
             <i className="ri-search-line"></i>
-          </span>
+          </motion.span>
         </Form>
       </div>
     </Col>

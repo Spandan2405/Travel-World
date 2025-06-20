@@ -38,8 +38,8 @@
 }
 
 .newsletter_button {
-  background: var(--secondary-color) !important;
-  color: #fff !important;
+  background: var(--secondary-color);
+  color: #fff;
   height: 3rem;
   font-size: 1rem;
 }

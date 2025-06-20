@@ -2,7 +2,8 @@ import React from "react";
 import { Card, CardBody } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./tour-card.css";
-import calcAvgRating from "../utils/avgRating";
+import calcAvgRating from "./utils/avgRating";
+import { motion } from "motion/react";
 
 const TourCard = ({ tour }) => {
   const { _id, title, city, photo, price, reviews } = tour;
@@ -39,9 +40,17 @@ const TourCard = ({ tour }) => {
             <h5>
               ${price} <span>/per person</span>
             </h5>
-            <button className="btn booking_button">
+            <motion.button
+              className="btn booking_button"
+              whileTap={{ scale: 0.8 }}
+              whileHover={{
+                scale: 1.1,
+                color: "black",
+                border: "2px solid black",
+              }}
+            >
               <Link to={`/tours/${_id}`}>Book Now</Link>
-            </button>
+            </motion.button>
           </div>
         </CardBody>
       </Card>

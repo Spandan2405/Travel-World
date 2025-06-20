@@ -3,6 +3,7 @@ import "./newsletter.css";
 
 import { Container, Row, Col } from "reactstrap";
 import maleTourist from "../assets/images/male-tourist.png";
+import { motion } from "motion/react";
 
 const Newsletter = () => {
   return (
@@ -14,8 +15,14 @@ const Newsletter = () => {
               <h2>Subscribe now to get useful traveling information.</h2>
             </div>
             <div className="newsletter_input">
-              <input type="email" placeholder="Enter your email" />
-              <button className="newsletter_button btn">Subscribe</button>
+              <input type="email" placeholder="Enter your email" required />
+              <motion.button
+                className="newsletter_button btn"
+                whileTap={{ scale: 0.8, color: "black" }}
+                whileHover={{ scale: 1.2, color: "black" }}
+              >
+                Subscribe
+              </motion.button>
             </div>
             <p className="newsletter_contents">
               Stay updated on the latest travel deals, tips, and exclusive
@@ -25,7 +32,22 @@ const Newsletter = () => {
           </Col>
           <Col lg="6">
             <div className="newsletter_img">
-              <img src={maleTourist} alt="" />
+              <motion.img
+                src={maleTourist}
+                drag
+                dragConstraints={{
+                  top: -2,
+                  left: -2,
+                  right: 2,
+                  bottom: 2,
+                }}
+                dragElastic={0.5}
+                dragTransition={{
+                  bounceStiffness: 600,
+                  bounceDamping: 20,
+                }}
+                whileDrag={{ cursor: "grabbing" }}
+              />
             </div>
           </Col>
         </Row>

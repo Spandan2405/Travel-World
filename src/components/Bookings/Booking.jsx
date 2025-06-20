@@ -3,8 +3,8 @@ import "./booking.css";
 import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/Authcontext";
-import { BASE_URL } from "../../utils/config";
-import { notifyError } from "../../utils/toast";
+import { BASE_URL } from "../../Shared/utils/config";
+import { notifyError } from "../../Shared/utils/toast";
 
 const Booking = ({ tour, avgRating }) => {
   const { price, reviews, title } = tour;

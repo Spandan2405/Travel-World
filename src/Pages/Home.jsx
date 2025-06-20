@@ -9,6 +9,7 @@ import worldImg from "../assets/images/world.png";
 import experienceImg from "../assets/images/experience.png";
 import Subtitle from "../Shared/Subtitle";
 import Newsletter from "../Shared/Newsletter";
+import { motion } from "motion/react";
 
 import SearchBar from "../Shared/SearchBar";
 import FeatureTourList from "../components/Featured-tours/FeatureTourList";
@@ -42,17 +43,47 @@ const Home = () => {
             </Col>
             <Col lg="2">
               <div className="hero_img-box">
-                <img src={heroImg} alt="" />
+                <motion.img
+                  src={heroImg}
+                  drag
+                  dragConstraints={{
+                    top: -2,
+                    left: -2,
+                    right: 2,
+                    bottom: 2,
+                  }}
+                  dragElastic={0.5}
+                  dragTransition={{
+                    bounceStiffness: 600,
+                    bounceDamping: 20,
+                  }}
+                  whileDrag={{ cursor: "grabbing" }}
+                />
               </div>
             </Col>
             <Col lg="2">
               <div className="hero_img-box mt-4">
-                <video src={heroVideo} alt="" />
+                <video src={heroVideo} alt="" controls />
               </div>
             </Col>
             <Col lg="2">
               <div className="hero_img-box mt-5 ">
-                <img src={heroImg02} alt="" />
+                <motion.img
+                  src={heroImg02}
+                  drag
+                  dragConstraints={{
+                    top: -2,
+                    left: -2,
+                    right: 2,
+                    bottom: 2,
+                  }}
+                  dragElastic={0.5}
+                  dragTransition={{
+                    bounceStiffness: 600,
+                    bounceDamping: 20,
+                  }}
+                  whileDrag={{ cursor: "grabbing" }}
+                />
               </div>
             </Col>
             <SearchBar />
@@ -108,7 +139,22 @@ const Home = () => {
             </Col>
             <Col lg="6">
               <div className="experience_img">
-                <img src={experienceImg} alt="" />
+                <motion.img
+                  src={experienceImg}
+                  drag
+                  dragConstraints={{
+                    top: -2,
+                    left: -2,
+                    right: 2,
+                    bottom: 2,
+                  }}
+                  dragElastic={0.5}
+                  dragTransition={{
+                    bounceStiffness: 600,
+                    bounceDamping: 20,
+                  }}
+                  whileDrag={{ cursor: "grabbing" }}
+                />
               </div>
             </Col>
           </Row>

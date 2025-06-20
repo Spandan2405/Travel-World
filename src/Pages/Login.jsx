@@ -6,8 +6,8 @@ import "../styles/login.css";
 import LoginImg from "../assets/images/login.png";
 import userIcon from "../assets/images/user.png";
 import { AuthContext } from "../context/Authcontext";
-import { BASE_URL } from "../utils/config";
-import { notifyError } from "../utils/toast";
+import { BASE_URL } from "../Shared/utils/config";
+import { notifyError } from "../Shared/utils/toast";
 
 const Login = () => {
   const [credentials, setCredentials] = useState({

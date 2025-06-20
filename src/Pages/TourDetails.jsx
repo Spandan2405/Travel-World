@@ -3,15 +3,16 @@ import "../styles/tour-details.css";
 // import tourData from "../assets/data/tours";
 import { Container, Row, Col, Form, ListGroup } from "reactstrap";
 import { useParams } from "react-router-dom";
-import calcAvgRating from "../utils/avgRating";
+import calcAvgRating from "../Shared/utils/avgRating.js";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import avatar from "../assets/images/avatar.jpg";
 import Booking from "../components/Bookings/Booking";
 import Newsletter from "../Shared/Newsletter";
 import useFetch from "../hooks/useFetch.js";
-import { BASE_URL } from "../utils/config.js";
+import { BASE_URL } from "../Shared/utils/config.js";
 import { AuthContext } from "./../context/Authcontext.js";
-import { notifyError } from "../utils/toast.js";
+import { notifyError } from "../Shared/utils/toast.js";
+import { motion } from "motion/react";
 
 const TourDetails = () => {
   const { id } = useParams();
@@ -76,7 +77,22 @@ const TourDetails = () => {
           <Row>
             <Col lg="8">
               <div className="tour_content">
-                <img src={photo} alt="" />
+                <motion.img
+                  src={photo}
+                  drag
+                  dragConstraints={{
+                    top: -2,
+                    left: -2,
+                    right: 2,
+                    bottom: 2,
+                  }}
+                  dragElastic={0.5}
+                  dragTransition={{
+                    bounceStiffness: 600,
+                    bounceDamping: 20,
+                  }}
+                  whileDrag={{ cursor: "grabbing" }}
+                />
                 <div className="tour_info">
                   <h2>{title}</h2>
                   <div className="d-flex align-items-center gap-5"></div>

@@ -4,6 +4,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import "../Header/Header.css";
 import { AuthContext } from "../../context/Authcontext";
+import { motion } from "motion/react";
 
 const nav_links = [
   { path: "/home", display: "Home" },
@@ -51,7 +52,13 @@ const Header = () => {
             {/* Logo */}
             <div className="logo">
               <Link to="/">
-                <img src={logo} alt="Tour logo" />
+                <motion.img
+                  whileTap={{ scale: 0.8 }}
+                  whileHover={{ scale: 1.5 }}
+                  transition={{ duration: 0.5 }}
+                  src={logo}
+                  alt="Tour logo"
+                />
               </Link>
             </div>
 
@@ -63,7 +70,12 @@ const Header = () => {
             >
               <ul className="menu align-items-start">
                 {nav_links.map((item, index) => (
-                  <li className="nav_item" key={index}>
+                  <motion.li
+                    className="nav_item"
+                    key={index}
+                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.2 }}
+                  >
                     <NavLink
                       to={item.path}
                       className={({ isActive }) =>
@@ -73,15 +85,17 @@ const Header = () => {
                     >
                       {item.display}
                     </NavLink>
-                  </li>
+                  </motion.li>
                 ))}
                 {user && (
-                  <button
+                  <motion.button
                     className="btn btn-dark d-block d-lg-none mt-5"
+                    whileTap={{ scale: 0.8 }}
+                    whileHover={{ scale: 1.2, color: "black" }}
                     onClick={logout}
                   >
                     Logout
-                  </button>
+                  </motion.button>
                 )}
               </ul>
             </div>
@@ -92,24 +106,40 @@ const Header = () => {
                 {user ? (
                   <>
                     <span className="username mb-0">{user.username}</span>
-                    <button
+                    <motion.button
                       className="btn btn-dark d-none d-lg-block"
                       onClick={logout}
+                      whileHover={{ scale: 1.1, color: "black" }}
                     >
                       Logout
-                    </button>
+                    </motion.button>
                   </>
                 ) : (
                   <>
-                    <Link
-                      to="/login"
-                      className="btn secondary_btn d-none d-sm-block"
+                    <motion.div
+                      whileTap={{ scale: 0.8 }}
+                      whileHover={{ scale: 1.2 }}
                     >
-                      Login
-                    </Link>
-                    <Link to="/register" className="btn primary_btn">
-                      Register
-                    </Link>
+                      <Link
+                        to="/login"
+                        className="btn secondary_btn d-none d-sm-block"
+                      >
+                        Login
+                      </Link>
+                    </motion.div>
+                    <motion.div
+                      whileTap={{ scale: 0.8 }}
+                      whileHover={{ scale: 1.2 }}
+                    >
+                      <Link
+                        to="/register"
+                        className="btn primary_btn"
+                        whileTap={{ scale: 0.8 }}
+                        whileHover={{ scale: 1.2 }}
+                      >
+                        Register
+                      </Link>
+                    </motion.div>
                   </>
                 )}
               </div>

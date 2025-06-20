@@ -1,8 +1,9 @@
 import React from "react";
 import TourCard from "../../Shared/TourCard";
 import { Col } from "reactstrap";
-import { BASE_URL } from "../../utils/config";
+import { BASE_URL } from "../../Shared/utils/config";
 import useFetch from "../../hooks/useFetch";
+import Loader from "../Loader";
 
 const FeatureTourList = () => {
   const {
@@ -14,7 +15,7 @@ const FeatureTourList = () => {
   // console.log(featuredTours);
   return (
     <>
-      {loading && <h4>Loading .........</h4>}
+      {loading && <Loader />}
       {error && <h4>{error}</h4>}
       {!loading &&
         !error &&
