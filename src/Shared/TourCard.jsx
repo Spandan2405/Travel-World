@@ -7,14 +7,36 @@ import { motion } from "motion/react";
 
 const TourCard = ({ tour }) => {
   const { _id, title, city, photo, price, reviews } = tour;
+  console.log(tour);
 
   const { totalRating, avgRating } = calcAvgRating(reviews);
   return (
-    <div className="tour_card">
+    <motion.div
+      className="tour_card"
+      whileHover={{ scale: 1.05, boxShadow: "0px 10px 30px rgba(0,0,0,0.2)" }}
+      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      drag={window.innerWidth >= 768 ? true : false}
+      dragConstraints={{ left: -1, right: 1, top: -1, bottom: 1 }}
+      dragElastic={0.5}
+      whileDrag={{ scale: 1.05, zIndex: 10 }}
+    >
       <Card>
         <div className="tour_img">
           <img src={photo} alt="tour_img" />
-          <span>Featured</span>
+          <motion.span
+            className="position-absolute bottom-0 end-0"
+            animate={{
+              scale: [1, 1.1, 1],
+              rotate: [0, 5, -5, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              repeatType: "reverse",
+            }}
+          >
+            Featured
+          </motion.span>
         </div>
 
         <CardBody>
@@ -42,19 +64,21 @@ const TourCard = ({ tour }) => {
             </h5>
             <motion.button
               className="btn booking_button"
-              whileTap={{ scale: 0.8 }}
+              whileTap={{ scale: 0.9, color: "black" }}
               whileHover={{
                 scale: 1.1,
                 color: "black",
                 border: "2px solid black",
+                x: [0, 5, -5, 5, -5, 0],
               }}
+              transition={{ duration: 0.5 }}
             >
               <Link to={`/tours/${_id}`}>Book Now</Link>
             </motion.button>
           </div>
         </CardBody>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 

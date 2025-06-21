@@ -20,7 +20,14 @@ const FeatureTourList = () => {
       {!loading &&
         !error &&
         featuredTours?.map((tour) => (
-          <Col lg="3" md="6" sm="6" className="mb-4" key={tour._id}>
+          <Col
+            xl="3"
+            lg="4"
+            md="6"
+            sm="6"
+            className="mb-4 px-sm-2 px-3"
+            key={tour._id}
+          >
             <TourCard tour={tour} />
           </Col>
         ))}

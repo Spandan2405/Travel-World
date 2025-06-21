@@ -1,10 +1,11 @@
 import React, { useState, useContext } from "react";
 import "./booking.css";
-import { Form, FormGroup, ListGroup, ListGroupItem, Button } from "reactstrap";
+import { Form, FormGroup, ListGroup, ListGroupItem } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/Authcontext";
 import { BASE_URL } from "../../Shared/utils/config";
 import { notifyError } from "../../Shared/utils/toast";
+import { motion } from "motion/react";
 
 const Booking = ({ tour, avgRating }) => {
   const { price, reviews, title } = tour;
@@ -125,9 +126,20 @@ const Booking = ({ tour, avgRating }) => {
               </ListGroupItem>
             </ListGroup>
 
-            <Button className="btn primary_btn w-100 mt-4" type="submit">
+            <motion.button
+              className="btn w-100 mt-4 rounded-4"
+              type="submit"
+              whileTap={{ scale: 0.9, color: "black" }}
+              whileHover={{
+                scale: 1.1,
+                color: "black",
+                border: "2px solid black",
+                x: [0, 5, -5, 5, -5, 0],
+              }}
+              transition={{ duration: 0.5 }}
+            >
               Book Now
-            </Button>
+            </motion.button>
           </div>
         </Form>
       </div>

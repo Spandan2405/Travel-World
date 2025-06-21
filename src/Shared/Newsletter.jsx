@@ -11,9 +11,14 @@ const Newsletter = () => {
       <Container className="newsletter rounded-4 px-4 py-2">
         <Row>
           <Col lg="6">
-            <div className="newsletter_content">
+            <motion.div
+              className="newsletter_content"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 3 }}
+            >
               <h2>Subscribe now to get useful traveling information.</h2>
-            </div>
+            </motion.div>
             <div className="newsletter_input">
               <input type="email" placeholder="Enter your email" required />
               <motion.button

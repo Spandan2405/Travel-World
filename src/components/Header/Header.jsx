@@ -5,6 +5,7 @@ import logo from "../../assets/images/logo.png";
 import "../Header/Header.css";
 import { AuthContext } from "../../context/Authcontext";
 import { motion } from "motion/react";
+import { notifySuccess } from "../../Shared/utils/toast";
 
 const nav_links = [
   { path: "/home", display: "Home" },
@@ -21,6 +22,7 @@ const Header = () => {
 
   const logout = () => {
     dispatch({ type: "LOGOUT" });
+    notifySuccess("Successfully Logged Out");
     navigate("/");
   };
 
@@ -116,10 +118,7 @@ const Header = () => {
                   </>
                 ) : (
                   <>
-                    <motion.div
-                      whileTap={{ scale: 0.8 }}
-                      whileHover={{ scale: 1.2 }}
-                    >
+                    <motion.div whileHover={{ scale: 1.2 }}>
                       <Link
                         to="/login"
                         className="btn secondary_btn d-none d-sm-block"

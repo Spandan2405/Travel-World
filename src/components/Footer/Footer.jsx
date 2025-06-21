@@ -40,7 +40,7 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg="3">
+          <Col lg="4">
             <div className="logo">
               <img src={logo} alt="" />
               <p className="d-none d-md-block">
@@ -62,7 +62,7 @@ const Footer = () => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col sm="3" lg="2">
             <h5 className="footer_link-title">Discover</h5>
             <ListGroup className="footer_quick-links d-flex flex-md-column">
               {quick_links1.map((item, index) => (
@@ -72,7 +72,7 @@ const Footer = () => {
               ))}
             </ListGroup>
           </Col>
-          <Col>
+          <Col sm="3" lg="2">
             <h5 className="footer_link-title">Quick Links</h5>
             <ListGroup className="footer_quick-links d-flex flex-md-column">
               {quick_links2.map((item, index) => (
@@ -82,7 +82,7 @@ const Footer = () => {
               ))}
             </ListGroup>
           </Col>
-          <Col sm="3">
+          <Col sm="3" lg="4">
             <h5 className="footer_link-title">Contacts</h5>
             <ListGroup className="footer_quick-links">
               <ListGroupItem className="border-0 p-0 d-flex align-items-center gap-3 mt-2">
@@ -94,7 +94,7 @@ const Footer = () => {
                   Gujarat,India
                 </p>
               </ListGroupItem>
-              <ListGroupItem className="border-0 p-0  d-flex align-items-center gap-3">
+              <ListGroupItem className="border-0 p-0  d-flex align-items-center gap-3 flex-wrap">
                 <p>
                   <span>
                     <i className="ri-mail-line"></i>

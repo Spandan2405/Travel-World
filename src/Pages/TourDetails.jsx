@@ -92,6 +92,18 @@ const TourDetails = () => {
                     bounceDamping: 20,
                   }}
                   whileDrag={{ cursor: "grabbing" }}
+                  whileHover={{
+                    scale: 1.05,
+                    rotateY: 10,
+                    rotateX: -10,
+                    boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.3)",
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 15,
+                  }}
+                  style={{ perspective: "1000px" }}
                 />
                 <div className="tour_info">
                   <h2>{title}</h2>
@@ -158,12 +170,14 @@ const TourDetails = () => {
                       placeholder="share your thoughts"
                       required
                     />
-                    <button
+                    <motion.button
                       className="btn primary_btn text-white"
                       type="submit"
+                      whileHover={{ scale: 1.1, color: "black" }}
+                      whileTap={{ scale: 0.8 }}
                     >
                       Submit
-                    </button>
+                    </motion.button>
                   </div>
                 </Form>
                 <ListGroup className="user_reviews mt-4">

@@ -35,7 +35,7 @@ const Testimonials = () => {
   };
   return (
     <Container>
-      <Slider {...settings} style={{ width: "80vw" }}>
+      <Slider {...settings} style={{ width: "auto" }}>
         <div className="testimonial">
           <p>
             I recently booked a trip through this tour booking website, and I

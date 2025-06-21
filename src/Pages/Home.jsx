@@ -141,6 +141,7 @@ const Home = () => {
               <div className="experience_img">
                 <motion.img
                   src={experienceImg}
+                  className="w-100"
                   drag
                   dragConstraints={{
                     top: -2,
