@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Travel World ✈️
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://travel-world-beta.vercel.app/)
+[![Vercel](https://img.shields.io/badge/deployed%20on-Vercel-black)](https://vercel.com)
 
-## Available Scripts
+Travel World is a modern travel booking platform that helps users discover and book amazing travel experiences around the globe. Featuring an intuitive interface and responsive design, the application allows users to explore destinations, find accommodations, and plan their dream vacations.
 
-In the project directory, you can run:
+## Features 🚀
 
-### `npm start`
+- **Destination Discovery**: Browse curated travel destinations with rich visuals
+- **Search & Filter**: Find accommodations by location, price range, and amenities
+- **Responsive Design**: Fully mobile-friendly experience
+- **Interactive UI**: Smooth animations and intuitive navigation
+- **Booking Simulation**: Experience the complete booking flow
+- **Testimonial Section**: Read reviews from fellow travelers
+- **Newsletter Subscription**: Stay updated with travel deals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack 💻
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend**: React.js, Tailwind CSS
+- **State Management**: React Context API
+- **Animation**: Framer Motion
+- **Icons**: React Icons
+- **Forms**: React Hook Form
+- **Deployment**: Vercel
 
-### `npm test`
+## Installation 🛠️
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these steps to run Travel World locally:
 
-### `npm run build`
+1. Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/your-username/Travel-World.git
+cd Travel-World
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+3. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+npm start
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Open your browser at `http://localhost:3000`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Deployment 🌐
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The application is deployed on Vercel:
 
-## Learn More
+```bash
+https://travel-world-beta.vercel.app/
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To deploy your own version:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Fork this repository
+2. Create a new Vercel project
+3. Connect your GitHub repository
+4. Vercel will automatically build and deploy your project
 
-### Code Splitting
+## Project Structure 📁
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```
+travel-world/
+├── public/          # Static assets
+├── src/
+│   ├── assets/      # Images and icons
+│   ├── components/  # Reusable UI components
+│   ├── context/     # Application state management
+│   ├── data/        # Mock data and constants
+│   ├── pages/       # Main page components
+│   ├── styles/      # Global styles and Tailwind config
+│   ├── App.js       # Main application component
+│   └── index.js     # Entry point
+├── .gitignore
+├── package.json
+├── README.md
+└── tailwind.config.js
+```
 
-### Analyzing the Bundle Size
+## Contributing 🤝
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Contributions are welcome! Please follow these steps:
 
-### Making a Progressive Web App
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Project Link: [https://github.com/your-username/travel-world](https://github.com/your-username/travel-world)
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+ScreenShots :-
 
-### Deployment
+![Screenshot 2025-06-20 014628](https://github.com/user-attachments/assets/662a8931-a9b6-4096-9dfd-e72d6755f9ed)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+![Screenshot 2025-06-20 014651](https://github.com/user-attachments/assets/150f33a3-b099-4925-8f59-11bcc0fbc1a2)
 
-### `npm run build` fails to minify
+![Screenshot 2025-06-21 102233](https://github.com/user-attachments/assets/a804daf2-f5bd-475d-8e7e-eb08a1cd5fa7)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot 2025-06-20 014828](https://github.com/user-attachments/assets/a7ee264f-1ae2-428b-9bd8-2bab54224653)
+![Screenshot 2025-06-20 015306](https://github.com/user-attachments/assets/6ca4ec67-8358-41bd-9e89-cc35e0904539)
